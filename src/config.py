@@ -1,4 +1,5 @@
 import logging.config
+
 from pathlib import Path
 from typing import Dict
 
@@ -141,7 +142,7 @@ class GlobalSettings(BaseSettings, DefaultModelConfig):
 
 class ExternalAPI(BaseSettings, DefaultModelConfig):
     github_api_token: str = Field(alias='GITHUB_API_TOKEN')
-    openai_api_token: str = Field(alias='OPEN_AI_API_TOKEN')
+    ai_chat_api_url: str = Field(alias='AI_CHAT_API_URL')
 
 
 class Settings(BaseSettings):

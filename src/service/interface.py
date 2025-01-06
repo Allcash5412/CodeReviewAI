@@ -24,6 +24,11 @@ class IGithubAPI(Protocol):
         """
         pass
 
+class IAIChatAPI(Protocol):
+
+    async def send_to_ai_chat(self, fetched_files: List[FetchedFile], level: CandidateLevel) -> str:
+        pass
+
 class IReviewRequest(Protocol):
 
     @property
@@ -46,4 +51,8 @@ class ICreateCodeReviewDep(Protocol):
 
     @property
     def github_api(self) -> IGithubAPI:
+        pass
+
+    @property
+    def ai_chat_api(self) -> IAIChatAPI:
         pass
